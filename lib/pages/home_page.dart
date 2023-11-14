@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.all(9),
             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             decoration: BoxDecoration(color: Colors.red),
-            child: Text("SegiTiga"),
+            child: Text("Segi Tiga"),
           ),
         ],
       ),
