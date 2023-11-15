@@ -1,22 +1,22 @@
-import 'package:bangun_datar_app/controller/persegi_controller.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bangun_datar_app/controller/layang_Controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+class LayangPage extends StatelessWidget {
+  const LayangPage({Key? key}) : super(key: key);
 
-class Persegipage extends StatelessWidget {
-  Persegipage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
-        title: Text("persegi"),
+        backgroundColor: Colors.yellow,
+        title: Text("Layang-layang"),
       ),
       body: Column(
         children: [
-          custommenu(imageAssets: "assets/Untitled.png", title: "Persegi"),
+          custommenu(imageAssets: "assets/layang.png", title: "Layang-layang"),
         ],
       ),
     );
@@ -32,7 +32,7 @@ class custommenu extends StatelessWidget {
 
   final String imageAssets;
   final String title;
-  final PersegiController _controller = Get.put(PersegiController());
+  final LayangController _controller = Get.put(LayangController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,34 +42,37 @@ class custommenu extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            "assets/Untitled.png",
+            "assets/layang.png",
             height: 100,
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Text(
-              "Persegi",
+              "Layang-layang",
               style: TextStyle(color: Colors.white),
             ),
           ),
           Text(
-              "Rumus luas persegi ini dikerjakan dengan cara mengalikan kedua sisi atau lebih tepatnya bagian panjang dan lebarnya. Jadi, rumusnya adalah luas = panjang x lebar atau luas = sisi x sisi."),
+              "Luas layang-layang adalah setengah hasil kali panjang diagonal-diagonalnya. Rumus untuk menentukan luas layang-layang adalah: Luas = 1/2 × (d)1 × (d)2."),
           Text(
-              "\nUntuk mengukur keliling bidang persegi, kamu harus melakukan perjalanan ke setiap sisi persegi. Mengetahui keliling tersebut bisa menggunakan rumus keliling persegi, sebagai berikut: K = s + s + s + s atau 4×s."),
+              "\nPenjelasannya, a dan b adalah panjang kedua pasang sisi layang-layang dengan ukuran yang sama. Atau variasi rumus keliling layang-layang lainnya adalah: Keliling Layang-Layang = (a + a) + (b + b)"),
+
+
+
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
               onChanged: (value) {
-                _controller.sisi = int.parse(value);
+                _controller.Diagonal1 = int.parse(value);
               },
               decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
-                  labelText: "Sisi",
-                  hintText: "Masukan Sisi",
+                  labelText: "Diagonal1",
+                  hintText: "Masukan diagonal1",
                   hintStyle: TextStyle(color: Colors.grey.shade400),
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(width: 1, color: Colors.grey),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -81,6 +84,35 @@ class custommenu extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: TextFormField(
+              onChanged: (value) {
+                _controller.Diagonal2 = int.parse(value);
+              },
+              decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  labelText: "diagonal2",
+                  hintText: "Masukan diagonal2",
+                  hintStyle: TextStyle(color: Colors.grey.shade400),
+                  contentPadding:
+                  EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: Colors.grey),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: Colors.grey),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: Colors.blue),
+                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+            ),
+          ),
+
+
+
+
           Row(
             children: [
               ElevatedButton(

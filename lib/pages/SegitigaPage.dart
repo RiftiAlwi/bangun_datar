@@ -1,22 +1,22 @@
-import 'package:bangun_datar_app/controller/persegi_controller.dart';
+import 'package:bangun_datar_app/controller/segitiga_Controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Persegipage extends StatelessWidget {
-  Persegipage({Key? key}) : super(key: key);
+class Segitigapage extends StatelessWidget {
+  Segitigapage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
-        title: Text("persegi"),
+        backgroundColor: Colors.red,
+        title: Text("Segitiga"),
       ),
       body: Column(
         children: [
-          custommenu(imageAssets: "assets/Untitled.png", title: "Persegi"),
+          custommenu(imageAssets: "assets/segitiga.png", title: "segitiga"),
         ],
       ),
     );
@@ -32,7 +32,7 @@ class custommenu extends StatelessWidget {
 
   final String imageAssets;
   final String title;
-  final PersegiController _controller = Get.put(PersegiController());
+  final SegitigaController _controller = Get.put(SegitigaController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +42,13 @@ class custommenu extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            "assets/Untitled.png",
+            "assets/segitiga.png",
             height: 100,
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Text(
-              "Persegi",
+              "segitiga",
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -69,7 +69,7 @@ class custommenu extends StatelessWidget {
                   hintText: "Masukan Sisi",
                   hintStyle: TextStyle(color: Colors.grey.shade400),
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                  EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(width: 1, color: Colors.grey),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -83,15 +83,7 @@ class custommenu extends StatelessWidget {
           ),
           Row(
             children: [
-              ElevatedButton(
-                  onPressed: () {
-                    _controller.hitungluas();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  ),
-                  child: Text("Hitung Luas")),
+
               ElevatedButton(
                   onPressed: () {
                     _controller.hitungkeliling();

@@ -3,6 +3,9 @@
 import 'package:get/get.dart';
 
 class PersegiController extends GetxController{
+
+
+
   int sisi = 0;
   final hasil = "".obs;
   final hasil2 = "".obs;

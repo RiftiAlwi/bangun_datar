@@ -1,4 +1,7 @@
 import 'package:bangun_datar_app/pages/PersegiPage.dart';
+import 'package:bangun_datar_app/pages/PersegiPanjangPage.dart';
+import 'package:bangun_datar_app/pages/LayangPage.dart';
+import 'package:bangun_datar_app/pages/SegitigaPage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,17 +26,40 @@ class HomePage extends StatelessWidget {
               },
               child: custommenu(
                   imageAssets: "assets/Untitled.png", title: "Persegi")),
-          Row(
+          Column(
             children: [
-              Expanded(
-                  child: custommenu(
-                      imageAssets: "assets/segitiga.png", title: "segitiga")),
-              Expanded(
-                  child: custommenu(
-                      imageAssets: "assets/segitiga.png", title: "segitiga")),
-              Expanded(
-                  child: custommenu(
-                      imageAssets: "assets/segitiga.png", title: "segitiga")),
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Persegipage()));
+                      },
+                      child: custommenu(
+                          imageAssets: "assets/Untitled.png", title: "Persegi")),
+
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPanjang()));
+                    },
+                    child: custommenu(
+                      imageAssets: "assets/download.png", title: "Persegi Panjang")),
+
+                  InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LayangPage()));
+                      },
+                      child: custommenu(
+                          imageAssets: "assets/layang.png", title: "Layang layang")),
+                  InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Segitigapage()));
+                      },
+                      child: custommenu(
+                          imageAssets: "assets/segitiga.png", title: "segitiga")),
+                ],
+              ),
+
             ],
           ),
         ],
